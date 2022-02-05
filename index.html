@@ -1,4 +1,4 @@
-   <!DOCTYPE html>
+  <!DOCTYPE html>
   <html lang="en">
 
   <body>
@@ -64,7 +64,11 @@
   </html>
   
   <style>
-     
+
+html{
+    height: -webkit-fill-available;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
 *
 {
@@ -121,6 +125,7 @@ header .logo
   position: absolute;
   right: 0;
   width: 100%;
+  min-height: 100vh;
   height: calc(var(--vh, 1vh) * 100);
   padding: 100px;
   display: flex;
