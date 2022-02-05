@@ -4,7 +4,7 @@
   <body>
     <section class="showcase">
         <header>
-          <h2 class="logo">The Craftsmen Group</h2>
+          <div class="logo"></div>
           <div class="toggle"></div>
         </header>
         <video src="tcg.mp4" muted loop autoplay></video>
@@ -87,10 +87,15 @@ header
 }
 header .logo
 {
-  color: #fff;
-  text-transform: uppercase;
+  position: relative;
+  width: 200px;
+  height: 60px;
+  background: url(tcg-01.png);
+  filter: invert(1);
+  background-repeat: no-repeat;
+  background-size: 200px;
+  background-position: center;
   cursor: pointer;
-  font-family: 'Abril Fatface', cursive;
 }
 .toggle
 {
@@ -117,6 +122,7 @@ header .logo
   right: 0;
   width: 100%;
   min-height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
   padding: 100px;
   display: flex;
   justify-content: space-between;
@@ -207,13 +213,14 @@ header .logo
 {
   display: inline-block;
   margin-right: 20px;
+  margin-bottom: 20px;
   filter: invert(1);
-  transform: scale(0.5);
+  transform: scale(0.8);
   transition: 0.5s;
 }
 .social li a:hover
 {
-  transform: scale(0.5) translateY(-15px);
+  transform: scale(0.8) translateY(-15px);
 }
 .menu
 {
@@ -261,6 +268,25 @@ header .logo
   {
     font-size: 2em;
   }
+
+  .toggle
+  {
+    background-size: 50px;
+  }
+
+  .toggle.active
+  {
+    background-size: 45px;
+  }
+  .social li a
+  {
+  transform: scale(1.2);
+  }
+.social li a:hover
+  {
+  transform: scale(1.2) translateY(-15px);
+  }
+
 } 
 
 
@@ -280,10 +306,8 @@ font-family: "Montserrat";
 
 
 .cg-container{
-    padding:20px 20px;
-
+    padding:20px 80px 20px 80px;
 }
-
 
 .cg-svg{
     padding: 30px;
@@ -353,4 +377,6 @@ const menuToggle = document.querySelector('.toggle');
         showcase.classList.toggle('active');
       })
 
+let vh = window.innerHeight * 0.01;
+document.documentElement.style.setProperty('--vh', '${vh}px');
   </script>
