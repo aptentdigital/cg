@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
   <html lang="en">
 
   <body>
@@ -64,6 +64,10 @@
   </html>
   
   <style>
+
+html{
+    height: -webkit-fill-available;
+}
 
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
 *
@@ -294,8 +298,9 @@ header .logo
 .cg-body {
 margin: auto;
 padding: 0;
-max-height: 100vh;
-max-width:100%;
+min-height: 100vh;
+min-width:100%;
+min-height: -webkit-fill-available;
 overflow: hidden;
 display: flex;
 flex-flow: row wrap;
